@@ -16,21 +16,11 @@ const ProductsProvider = ({ children }) => {
 		getData();
 	}, []);
 
-	const addProduct = () => {
-		const oneMore = {
-			Name: 'Ground almonds',
-			Price: 3,
-			Location: 'Home baking'
-		};
-
-		setProducts([...products, oneMore]);
-	};
-
 	return (
 		<ProductsContext.Provider
 			value={{
 				products,
-				addProduct
+				setProducts
 			}}
 		>
 			{children}

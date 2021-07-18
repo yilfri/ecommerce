@@ -1,11 +1,20 @@
+import { useContext } from 'react';
+import { ProductsContext } from '../context/ProductContext';
 import Layout from '../components/layout/Layout';
+import ProductCard from '../components/ProductCard';
 
 export default function Home() {
+	const { products, addProduct } = useContext(ProductsContext);
+
 	return (
 		<Layout title="FunKommerce" description="Tienda Online de Funko Pop">
-			<div>
-				<h1>Inicio</h1>
-			</div>
+			<>
+				<h1>Lista de productos</h1>
+
+				{products.map((product) => (
+					<ProductCard key={product.Name} product={product} />
+				))}
+			</>
 		</Layout>
 	);
 }

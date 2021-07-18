@@ -1,5 +1,6 @@
 const data = [
 	{
+		id: 1,
 		name: 'Goku',
 		price: 9,
 		description: 'description',
@@ -8,6 +9,7 @@ const data = [
 	},
 
 	{
+		id: 2,
 		name: 'Stich',
 		price: 7,
 		description: 'description',
@@ -16,6 +18,7 @@ const data = [
 	},
 
 	{
+		id: 3,
 		name: 'Bulbasaur',
 		price: 11,
 		description: 'description',
@@ -23,6 +26,7 @@ const data = [
 		quantity: 21
 	},
 	{
+		id: 4,
 		name: 'Cruella',
 		price: 8,
 		description: 'description',
@@ -32,7 +36,9 @@ const data = [
 		},
 		quantity: 17
 	},
+
 	{
+		id: 5,
 		name: 'Appa',
 		price: 17,
 		description: 'description',
@@ -44,6 +50,7 @@ const data = [
 	},
 
 	{
+		id: 6,
 		name: 'Pennywise',
 		price: 9,
 		description: 'description',
@@ -54,6 +61,7 @@ const data = [
 		quantity: 3
 	},
 	{
+		id: 7,
 		name: 'Squirtle',
 		price: 9,
 		description: 'description',
@@ -64,6 +72,7 @@ const data = [
 		quantity: 10
 	},
 	{
+		id: 8,
 		name: 'Kakashi',
 		price: 7.5,
 		description: 'description',
@@ -75,6 +84,7 @@ const data = [
 	},
 
 	{
+		id: 9,
 		name: 'Harley Quinn',
 		price: 9,
 		description: 'description',
@@ -85,6 +95,7 @@ const data = [
 		quantity: 13
 	},
 	{
+		id: 10,
 		name: 'Deadpool',
 		price: 4,
 		description: 'description',
@@ -95,6 +106,7 @@ const data = [
 		quantity: 6
 	},
 	{
+		id: 11,
 		name: 'Hulk',
 		price: 9,
 		description: 'description',
@@ -105,6 +117,7 @@ const data = [
 		quantity: 9
 	},
 	{
+		id: 12,
 		name: 'Yoda',
 		price: 12.5,
 		description: 'description',
@@ -115,6 +128,7 @@ const data = [
 		quantity: 5
 	},
 	{
+		id: 13,
 		name: 'Flash',
 		price: 12,
 		description: 'description',
@@ -125,6 +139,7 @@ const data = [
 		quantity: 13
 	},
 	{
+		id: 14,
 		name: 'Harry Potter',
 		price: 15,
 		description: 'description',
@@ -135,6 +150,7 @@ const data = [
 		quantity: 20
 	},
 	{
+		id: 15,
 		name: 'Baby Yoda',
 		price: 9,
 		description: 'description',
@@ -145,6 +161,7 @@ const data = [
 		quantity: 8
 	},
 	{
+		id: 16,
 		name: 'The Joker',
 		price: 9.5,
 		description: 'description',
@@ -155,6 +172,7 @@ const data = [
 		quantity: 14
 	},
 	{
+		id: 17,
 		name: 'Hermione Granger',
 		price: 7,
 		description: 'description',
@@ -165,6 +183,7 @@ const data = [
 		quantity: 9
 	},
 	{
+		id: 18,
 		name: 'Batman',
 		price: 11.5,
 		description: 'description',
@@ -175,6 +194,7 @@ const data = [
 		quantity: 13
 	},
 	{
+		id: 19,
 		name: 'Freddy Mercury',
 		price: 99,
 		description: 'description',
@@ -185,6 +205,7 @@ const data = [
 		quantity: 2
 	},
 	{
+		id: 20,
 		name: 'Lebron James',
 		price: 12.5,
 		description: 'description',

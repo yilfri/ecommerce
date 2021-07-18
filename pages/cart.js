@@ -2,9 +2,9 @@ import Layout from '../components/layout/Layout';
 
 export default function Home() {
 	return (
-		<Layout title="FunKommerce" description="Tienda Online de Funko Pop">
+		<Layout title="Carrito de compras" description="Lista de Funko Pop en tu carrito de compras">
 			<div>
-				<h1>Inicio</h1>
+				<h1>Carrito de compras</h1>
 			</div>
 		</Layout>
 	);

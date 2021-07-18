@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout';
 import ProductCard from '../components/ProductCard';
 
 export default function Home() {
-	const { products, addProduct } = useContext(ProductsContext);
+	const { products } = useContext(ProductsContext);
 
 	return (
 		<Layout title="FunKommerce" description="Tienda Online de Funko Pop">

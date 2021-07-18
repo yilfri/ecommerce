@@ -1,11 +1,12 @@
-import Head from 'next/head';
 import Layout from '../components/layout/Layout';
-import Header from '../components/layout/Header';
+import Navbar from '../components/layout/Navbar';
 
 export default function Home() {
 	return (
 		<Layout title="FunKommerce" description="Tienda Online de Funko Pop">
-			<Header />
+			<div>
+				<h1>Inicio</h1>
+			</div>
 		</Layout>
 	);
 }

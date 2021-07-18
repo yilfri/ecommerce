@@ -1,11 +1,11 @@
 import '../styles/globals.css';
-import ProductsProvider from '../context/ProductContext';
+import ProductState from '../context/products/productState';
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<ProductsProvider>
+		<ProductState>
 			<Component {...pageProps} />
-		</ProductsProvider>
+		</ProductState>
 	);
 }
 

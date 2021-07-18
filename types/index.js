@@ -1,0 +1,2 @@
+/* TYPE PRODUCT CONTEXT */
+export const GET_PRODUCTS = 'GET_PRODUCTS';

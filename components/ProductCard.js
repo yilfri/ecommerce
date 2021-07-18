@@ -1,14 +1,12 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => {
-	const { Name, Price, Location } = product;
+	const { name, price, quantity, description, id, img } = product;
 
 	return (
-		<div>
-			<p>
-				Product: {Name} - Price: {Price} - Location: {Location}
-			</p>
-		</div>
+		<li>
+			Product: {name} - Price: {price} - Cantidad: {quantity}
+		</li>
 	);
 };
 

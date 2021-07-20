@@ -1,8 +1,12 @@
 import React, { useState, useContext } from 'react';
+import ProductsContext from '../context/products/ProductsContext';
 
 const ProductCard = ({ product }) => {
 	// Destructuración de props.
 	const { name, price, quantity, description, id, img } = product;
+
+	// Obtener datos del Context.
+	const { updateQuantity } = useContext(ProductsContext);
 
 	return (
 		<>
@@ -10,8 +14,7 @@ const ProductCard = ({ product }) => {
 				Product: {name} - Price: {price} - Cantidad: {quantity}
 			</li>
 
-			<button onClick={() => console.log(product)}>-</button>
-			<button onClick={() => console.log(product)}>+</button>
+			{quantity !== 0 && <button onClick={() => updateQuantity(product)}>Add cart</button>}
 		</>
 	);
 };

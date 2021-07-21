@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import Layout from '../components/layout/Layout';
-import ProductsContext from '../context/products/ProductsContext';
-import ProductCard from '../components/ProductCard';
+import CartContext from '../context/cart/cartContext';
+import ShoppingCart from '../components/ShoppingCart';
 
 const Cart = () => {
 	// Obtener datos del Context.
-	const { cart } = useContext(ProductsContext);
+	const { cart } = useContext(CartContext);
 
 	return (
 		<Layout
@@ -20,7 +20,7 @@ const Cart = () => {
 				) : (
 					<ul>
 						{cart.map((product) => (
-							<ProductCard key={product.id} product={product} />
+							<ShoppingCart key={product.id} product={product} />
 						))}
 					</ul>
 				)}

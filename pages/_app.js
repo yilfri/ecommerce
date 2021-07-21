@@ -1,11 +1,11 @@
 import '../styles/globals.css';
-import ProductState from '../context/products/productState';
+import CartState from '../context/cart/cartState';
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<ProductState>
+		<CartState>
 			<Component {...pageProps} />
-		</ProductState>
+		</CartState>
 	);
 }
 

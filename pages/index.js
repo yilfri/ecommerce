@@ -12,7 +12,7 @@ import { ProductContainer } from '../components/styles/home';
 
 export default function Home() {
 	// Destructuración de datos del context
-	const { products, getProducts, decreaseProductQty, addProductCart } = useContext(CartContext);
+	const { products, getProducts } = useContext(CartContext);
 
 	// Solicita los datos a la API.
 	useEffect(() => {

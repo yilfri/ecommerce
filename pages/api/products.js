@@ -144,7 +144,7 @@ const data = [
 		price: 15,
 		description: 'description',
 		img: {
-			front: 'hhttps://i.imgur.com/X7KptEu.png',
+			front: 'https://i.imgur.com/X7KptEu.png',
 			box: 'https://i.imgur.com/wfgYm5O.png'
 		},
 		quantity: 20

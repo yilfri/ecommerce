@@ -1,26 +1,19 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import CartContext from '../context/cart/cartContext';
 import Layout from '../components/layout/Layout';
 import Image from 'next/image';
-import ProductCard from '../components/ProductCard';
-import PrimeReact from 'primereact/api';
 
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+// Prime React Dependencies
 import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
-import { Rating } from 'primereact/rating';
-
+import { DataView } from 'primereact/dataview';
+import { Toast } from 'primereact/toast';
 import 'primereact/resources/themes/saga-blue/theme.css';
-/* import 'primereact/resources/themes/vela-green/theme.css'; */
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
+// Styled Components.
 import { CardFlex, ProductPrice, ProductContainer } from '../components/styles/home';
-
-import styles from '../styles/DataViewDemo.module.css';
-
-import styled from 'styled-components';
 
 export default function Home() {
 	// Destructuración de datos del context
@@ -31,10 +24,19 @@ export default function Home() {
 		getProducts();
 	}, []);
 
+	const toast = useRef(null);
+
 	// Handle Events.
 	const handleAddToCart = (product) => {
 		decreaseProductQty(product);
 		addProductCart(product);
+
+		toast.current.show({
+			severity: 'success',
+			summary: 'Producto agregado',
+			detail: `Haz agreagado un ${product.name} al carrito`,
+			life: 3000
+		});
 	};
 
 	const itemTemplate = (product) => {
@@ -47,7 +49,7 @@ export default function Home() {
 		return (
 			<div className="p-col-12 p-md-4 ">
 				<CardFlex className="card">
-					<div className="product-grid-item-content">
+					<div>
 						<Image
 							src={data.img.front}
 							onError={(e) =>
@@ -55,19 +57,22 @@ export default function Home() {
 									'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png')
 							}
 							alt={data.name}
-							width={350}
-							height={350}
+							width={300}
+							height={300}
 							layout="responsive"
 						/>
 						<h3>{data.name}</h3>
 						<p>{data.description}</p>
+						<span>
+							Pzas disponibles: <b>{data.quantity} </b>
+						</span>
 					</div>
-					<div className="p-d-flex p-jc-between p-ai-center">
+					<div className="p-d-flex p-jc-between p-ai-center p-mt-4">
 						<ProductPrice>${data.price}</ProductPrice>
 						<Button
 							icon="pi pi-shopping-cart"
 							label="Add to Cart"
-							/* disabled={data.inventoryStatus === 'OUTOFSTOCK'} */
+							disabled={data.quantity === 0}
 							onClick={() => handleAddToCart(data)}
 						></Button>
 					</div>
@@ -79,6 +84,8 @@ export default function Home() {
 	return (
 		<Layout title="FunKommerce" description="Tienda Online de Funko Pop">
 			<ProductContainer className="card verdecito">
+				<Toast ref={toast} position="bottom-right" />
+
 				<DataView value={products} itemTemplate={itemTemplate} paginator rows={9} />
 			</ProductContainer>
 		</Layout>

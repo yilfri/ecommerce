@@ -7,11 +7,6 @@ import { InputText } from 'primereact/inputtext';
 import 'primeicons/primeicons.css';
 
 import styled from 'styled-components';
-/* import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/themes/vela-green/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeflex/primeflex.css';
-import 'primeflex/primeflex.css'; */
 
 const Header = () => {
 	const router = useRouter();

@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART } from '../../types';
+import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART, TOTAL_CART } from '../../types';
 
 // eslint-disable-next-line
 export default (state, action) => {
@@ -21,7 +21,6 @@ export default (state, action) => {
 			let newItem = state.products.find((product) => product.id === action.payload.id);
 
 			let itemInCart = state.cart.find((item) => item.id === newItem.id);
-			console.log(itemInCart);
 
 			return itemInCart
 				? {
@@ -32,9 +31,13 @@ export default (state, action) => {
 				  }
 				: {
 						...state,
-						cart: [...state.cart, { ...newItem, qtyToBuy: (newItem.qtyToBy = 1) }]
+						cart: [...state.cart, { ...newItem, qtyToBuy: (newItem.qtyToBuy = 1) }]
 				  };
-
+		case TOTAL_CART:
+			return {
+				...state,
+				priceTotal: state.cart.reduce((acc, el) => acc + el.price * el.qtyToBuy, 0)
+			};
 		default:
 			return state;
 	}

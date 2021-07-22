@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react';
 import CartContext from './cartContext';
 import CartReducer from './cartReducer';
-import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART } from '../../types';
+import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART, TOTAL_CART } from '../../types';
 
 const CartState = ({ children }) => {
 	const initialState = {
 		products: [],
-		cart: []
+		cart: [],
+		priceTotal: null
 	};
 
 	// Reducer
@@ -42,9 +43,15 @@ const CartState = ({ children }) => {
 
 	// Decrementa la cantidad de productos disponibles.
 	const addProductCart = (product) => {
-		console.log(product);
 		dispatch({
 			type: ADD_PRODUCT_CART,
+			payload: product
+		});
+	};
+
+	const totalCart = (product) => {
+		dispatch({
+			type: TOTAL_CART,
 			payload: product
 		});
 	};
@@ -55,9 +62,11 @@ const CartState = ({ children }) => {
 			value={{
 				products: state.products,
 				cart: state.cart,
+				priceTotal: state.priceTotal,
 				getProducts,
 				decreaseProductQty,
-				addProductCart
+				addProductCart,
+				totalCart
 			}}
 		>
 			{children}

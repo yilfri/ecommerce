@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
+import 'primereact/resources/themes/saga-green/theme.css';
 
 const Layout = ({ children, title, description }) => {
 	return (

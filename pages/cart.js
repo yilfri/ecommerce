@@ -1,32 +1,15 @@
 import React, { useState, useEffec, useContext } from 'react';
-import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 import CartContext from '../context/cart/cartContext';
 import ShoppingCart from '../components/ShoppingCart';
 
-import { OrderList } from 'primereact/orderlist';
-
-import styled from 'styled-components';
-
-const UlProducts = styled.ul`
-	margin: 0 1rem;
-	padding: 0;
-	border: 1px solid #dee2e6;
-`;
-
-const Title = styled.h1`
-	text-align: center;
-`;
+// Style Components & Prime React Dependencies
+import { Button } from 'primereact/button';
+import { UlProducts, Title, NoItems, TotalAmount } from '../components/styles/cartStyles';
 
 const Cart = () => {
 	// Obtener datos del Context.
-	const { cart } = useContext(CartContext);
-
-	const { name, quantity, price, description, img } = cart;
-
-	const itemTemplate = (product) => {
-		return <ShoppingCart product={product} />;
-	};
+	const { cart, priceTotal } = useContext(CartContext);
 
 	return (
 		<Layout
@@ -37,13 +20,26 @@ const Cart = () => {
 				<Title>Carrito de compras</Title>
 
 				{cart.length === 0 ? (
-					<p>No hay nada papaito</p>
+					<NoItems>No hay productos agregados al carrito</NoItems>
 				) : (
-					<UlProducts>
-						{cart.map((product) => (
-							<ShoppingCart key={product.id} product={product} />
-						))}
-					</UlProducts>
+					<>
+						<UlProducts>
+							{cart.map((product) => (
+								<ShoppingCart key={product.id} product={product} />
+							))}
+						</UlProducts>
+
+						<TotalAmount>
+							<h4>TOTAL</h4>
+							<p>
+								Subtotal: <span>${priceTotal}</span>{' '}
+							</p>
+							<p>
+								Envio: <span>${9}</span>
+							</p>
+							<Button label={`Total a pagar: $${priceTotal + 9}`} />
+						</TotalAmount>
+					</>
 				)}
 			</>
 		</Layout>

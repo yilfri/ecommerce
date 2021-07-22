@@ -5,20 +5,19 @@ import Image from 'next/image';
 // Prime React Dependencies
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
-import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
 // Styled Components.
-import { CardFlex, ProductPrice, ProductContainer } from '../components/styles/home';
+import { CardFlex, ProductPrice } from '../components/styles/home';
 
 const ProductCard = ({ product }) => {
 	// Destructuración de props.
 	const { name, quantity, price, description, img } = product;
 
 	// Obtener datos del Context.
-	const { decreaseProductQty, addProductCart } = useContext(CartContext);
+	const { decreaseProductQty, addProductCart, totalCart } = useContext(CartContext);
 
 	// Creación de Ref.
 	const toast = useRef(null);
@@ -27,6 +26,7 @@ const ProductCard = ({ product }) => {
 	const handleAddToCart = (product) => {
 		decreaseProductQty(product);
 		addProductCart(product);
+		totalCart(product);
 
 		toast.current.show({
 			severity: 'success',

@@ -1,13 +1,20 @@
 import React, { useReducer } from 'react';
 import CartContext from './cartContext';
 import CartReducer from './cartReducer';
-import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART, TOTAL_CART } from '../../types';
+import {
+	GET_PRODUCTS,
+	DECREASE_QUANTITY_PRODUCT,
+	ADD_PRODUCT_CART,
+	TOTAL_CART,
+	PAY_CART
+} from '../../types';
 
 const CartState = ({ children }) => {
 	const initialState = {
 		products: [],
 		cart: [],
-		priceTotal: null
+		priceTotal: null,
+		history: []
 	};
 
 	// Reducer
@@ -56,6 +63,12 @@ const CartState = ({ children }) => {
 		});
 	};
 
+	const payCart = () => {
+		dispatch({
+			type: PAY_CART
+		});
+	};
+
 	// Provider
 	return (
 		<CartContext.Provider
@@ -63,10 +76,12 @@ const CartState = ({ children }) => {
 				products: state.products,
 				cart: state.cart,
 				priceTotal: state.priceTotal,
+				history: state.history,
 				getProducts,
 				decreaseProductQty,
 				addProductCart,
-				totalCart
+				totalCart,
+				payCart
 			}}
 		>
 			{children}

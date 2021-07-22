@@ -17,9 +17,6 @@ const ShoppingCart = ({ product }) => {
 	// Destructuración de props.
 	const { name, price, img, qtyToBuy } = product;
 
-	// Obtener datos del Context.
-	const { cart } = useContext(CartContext);
-
 	return (
 		<>
 			<ProductListItem>
@@ -44,7 +41,7 @@ const ShoppingCart = ({ product }) => {
 							<i
 								className="pi pi-shopping-cart
 "
-							/>{' '}
+							/>
 							x{qtyToBuy}
 						</h5>
 

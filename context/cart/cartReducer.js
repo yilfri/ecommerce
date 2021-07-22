@@ -1,4 +1,10 @@
-import { GET_PRODUCTS, DECREASE_QUANTITY_PRODUCT, ADD_PRODUCT_CART, TOTAL_CART } from '../../types';
+import {
+	GET_PRODUCTS,
+	DECREASE_QUANTITY_PRODUCT,
+	ADD_PRODUCT_CART,
+	TOTAL_CART,
+	PAY_CART
+} from '../../types';
 
 // eslint-disable-next-line
 export default (state, action) => {
@@ -37,6 +43,14 @@ export default (state, action) => {
 			return {
 				...state,
 				priceTotal: state.cart.reduce((acc, el) => acc + el.price * el.qtyToBuy, 0)
+			};
+
+		case PAY_CART:
+			let date = Date.now();
+
+			return {
+				...state,
+				history: [...state.history, [[...state.cart], date]]
 			};
 		default:
 			return state;

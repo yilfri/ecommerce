@@ -30,7 +30,7 @@ const Header = () => {
 			label: 'Historial de compras',
 			icon: 'pi pi-fw pi-chart-line',
 			command: (e) => {
-				router.push('/');
+				router.push('/history');
 			}
 		}
 	];

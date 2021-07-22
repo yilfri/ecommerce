@@ -1,4 +1,5 @@
-import React, { useState, useEffec, useContext } from 'react';
+import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
 import Layout from '../components/layout/Layout';
 import CartContext from '../context/cart/cartContext';
 import ShoppingCart from '../components/ShoppingCart';
@@ -9,8 +10,14 @@ import { UlProducts, Title, NoItems, TotalAmount } from '../components/styles/ca
 
 const Cart = () => {
 	// Obtener datos del Context.
-	const { cart, priceTotal } = useContext(CartContext);
+	const { cart, priceTotal, payCart } = useContext(CartContext);
 
+	const router = useRouter();
+
+	const handleClick = () => {
+		router.push('/order');
+		payCart();
+	};
 	return (
 		<Layout
 			title="FunKommerce | Carrito de compras"
@@ -37,7 +44,7 @@ const Cart = () => {
 							<p>
 								Envio: <span>${9}</span>
 							</p>
-							<Button label={`Total a pagar: $${priceTotal + 9}`} />
+							<Button label={`Total a pagar: $${priceTotal + 9}`} onClick={() => handleClick()} />
 						</TotalAmount>
 					</>
 				)}

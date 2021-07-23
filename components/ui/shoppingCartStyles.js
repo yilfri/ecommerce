@@ -57,16 +57,14 @@ export const ProductListDetails = styled.div`
 `;
 
 export const ProductPriceTotal = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
 	line-height: 0;
 	margin-left: 1rem;
 
 	h6 {
 		font-size: 1.2rem;
-		margin: 1rem 0;
+		margin: 0.7rem 0;
 		padding: 0;
+		padding-left: 0.3rem;
 	}
 `;
 

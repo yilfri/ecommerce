@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
 		toast.current.show({
 			severity: 'success',
 			summary: 'Producto agregado',
-			detail: `Haz agreagado un ${product.name} al carrito`,
+			detail: `Has agregado un ${product.name} al carrito`,
 			life: 3000
 		});
 	};

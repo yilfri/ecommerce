@@ -5,7 +5,6 @@ import ProductCard from '../components/ProductCard';
 
 // Prime React Dependencies
 import { DataView } from 'primereact/dataview';
-import 'primeicons/primeicons.css';
 
 // Styled Components.
 import { ProductContainer } from '../components/ui/home';

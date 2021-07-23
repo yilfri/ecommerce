@@ -5,7 +5,6 @@ import CartContext from '../context/cart/cartContext';
 import ShoppingCart from '../components/ShoppingCart';
 
 // Style Components & Prime React Dependencies
-import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
 import { UlProducts, Title, NoItems, SubTotal, TotalAmount } from '../components/ui/cartStyles';
 import { ProductListItem } from '../components/ui/shoppingCartStyles';

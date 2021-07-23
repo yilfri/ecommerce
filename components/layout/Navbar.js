@@ -4,7 +4,6 @@ import Link from 'next/link';
 //Prime React Components.
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
-import 'primeicons/primeicons.css';
 
 import styled from 'styled-components';
 

@@ -56,6 +56,7 @@ const CartState = ({ children }) => {
 		});
 	};
 
+	// Precio total de todos los productos.
 	const totalCart = (product) => {
 		dispatch({
 			type: TOTAL_CART,
@@ -63,6 +64,7 @@ const CartState = ({ children }) => {
 		});
 	};
 
+	// Historial de compras
 	const payCart = () => {
 		dispatch({
 			type: PAY_CART

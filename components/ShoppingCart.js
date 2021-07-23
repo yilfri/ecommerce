@@ -1,6 +1,5 @@
 import React, { useState, useEffec, useContext } from 'react';
 import Image from 'next/image';
-import CartContext from '../context/cart/cartContext';
 
 // Style Components & Prime React Dependencies
 import { Button } from 'primereact/button';
@@ -49,10 +48,9 @@ const ShoppingCart = ({ product }) => {
 							Precio unitario: <span>${price}</span>
 						</p>
 					</ProductListDetails>
-					<ProductPriceTotal>
-						<h6>
-							Total: <b>${qtyToBuy * price}</b>
-						</h6>
+					<ProductPriceTotal className=" p-d-flex p-flex-column p-flex-md-row p-jc-between p-ai-end">
+						<h6>Total: </h6>
+						<h6>${qtyToBuy * price}</h6>
 					</ProductPriceTotal>
 					<ProductAction>
 						<Button icon="pi pi-times" className="p-button-rounded p-button-danger p-button-text" />

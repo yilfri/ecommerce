@@ -8,7 +8,7 @@ import { DataView } from 'primereact/dataview';
 import 'primeicons/primeicons.css';
 
 // Styled Components.
-import { ProductContainer } from '../components/styles/home';
+import { ProductContainer } from '../components/ui/home';
 
 export default function Home() {
 	// Destructuración de datos del context

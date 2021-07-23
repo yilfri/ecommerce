@@ -11,7 +11,7 @@ import {
 	ProductListDetails,
 	ProductPriceTotal,
 	ProductAction
-} from '../components/styles/shoppingCartStyles';
+} from './ui/shoppingCartStyles';
 
 const ShoppingCart = ({ product }) => {
 	// Destructuración de props.

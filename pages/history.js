@@ -1,7 +1,7 @@
 import Layout from '../components/layout/Layout';
 
 // Style Components
-import { Title, NoItems } from '../components/styles/cartStyles';
+import { Title, NoItems } from '../components/ui/cartStyles';
 
 const History = () => {
 	return (

@@ -10,7 +10,7 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
 // Styled Components.
-import { CardFlex, ProductPrice } from '../components/styles/home';
+import { CardFlex, ProductPrice } from '../components/ui/home';
 
 const ProductCard = ({ product }) => {
 	// Destructuración de props.

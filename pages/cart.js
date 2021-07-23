@@ -5,8 +5,11 @@ import CartContext from '../context/cart/cartContext';
 import ShoppingCart from '../components/ShoppingCart';
 
 // Style Components & Prime React Dependencies
+import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
-import { UlProducts, Title, NoItems, TotalAmount } from '../components/styles/cartStyles';
+import { Card } from 'primereact/card';
+import { UlProducts, Title, NoItems, SubTotal, TotalAmount } from '../components/styles/cartStyles';
+import { ProductListItem, ProductItem } from '../components/styles/shoppingCartStyles';
 
 const Cart = () => {
 	// Obtener datos del Context.
@@ -18,6 +21,9 @@ const Cart = () => {
 		router.push('/order');
 		payCart();
 	};
+
+	const totalProductQtity = cart.reduce((acc, el) => acc + el.qtyToBuy, 0);
+
 	return (
 		<Layout
 			title="FunKommerce | Carrito de compras"
@@ -29,24 +35,27 @@ const Cart = () => {
 				{cart.length === 0 ? (
 					<NoItems>No hay productos agregados al carrito</NoItems>
 				) : (
-					<>
-						<UlProducts>
+					<div className="p-grid p-ai-center p-flex-column p-m-2">
+						<UlProducts className="p-col-12 p-md-8">
 							{cart.map((product) => (
 								<ShoppingCart key={product.id} product={product} />
 							))}
-						</UlProducts>
 
-						<TotalAmount>
-							<h4>TOTAL</h4>
-							<p>
-								Subtotal: <span>${priceTotal}</span>{' '}
-							</p>
-							<p>
-								Envio: <span>${9}</span>
-							</p>
-							<Button label={`Total a pagar: $${priceTotal + 9}`} onClick={() => handleClick()} />
-						</TotalAmount>
-					</>
+							<ProductListItem>
+								<SubTotal>
+									<p>Subtotal ({totalProductQtity} productos):</p>
+
+									<span>${priceTotal}</span>
+								</SubTotal>
+							</ProductListItem>
+						</UlProducts>
+						<Button
+							label="Pagar"
+							icon="pi pi-credit-card"
+							className="p-p-right"
+							onClick={() => handleClick()}
+						/>
+					</div>
 				)}
 			</>
 		</Layout>

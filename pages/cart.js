@@ -7,9 +7,8 @@ import ShoppingCart from '../components/ShoppingCart';
 // Style Components & Prime React Dependencies
 import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
 import { UlProducts, Title, NoItems, SubTotal, TotalAmount } from '../components/ui/cartStyles';
-import { ProductListItem, ProductItem } from '../components/ui/shoppingCartStyles';
+import { ProductListItem } from '../components/ui/shoppingCartStyles';
 
 const Cart = () => {
 	// Obtener datos del Context.

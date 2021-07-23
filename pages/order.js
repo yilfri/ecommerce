@@ -2,14 +2,13 @@ import React, { useState, useRef } from 'react';
 import Router from 'next/router';
 import Layout from '../components/layout/Layout';
 
+// Style Components & Prime React Dependencies
+import { Toast } from 'primereact/toast';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
-
-// Style Components & Prime React Dependencies
-import { PaymentForm, Error } from '../components/ui/orderStyles';
 import { Title } from '../components/ui/cartStyles';
-import { Toast } from 'primereact/toast';
+import { PaymentForm, Error } from '../components/ui/orderStyles';
 
 // Validaciones.
 import useValidation from '../hooks/useValidation';

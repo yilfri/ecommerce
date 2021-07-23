@@ -50,7 +50,7 @@ export default (state, action) => {
 
 			return {
 				...state,
-				history: [...state.history, [[...state.cart], date]]
+				history: [...state.history, [date, ...state.cart]]
 			};
 		default:
 			return state;
